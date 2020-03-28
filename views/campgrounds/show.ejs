@@ -1,0 +1,37 @@
+<%- include("../partials/header") %>
+
+<div class="row mt-5">
+        <div class="col-lg-3">
+
+        </div>
+        <div class="col-lg-9">
+            <div class="card" style="width: 60%;">
+                <img src="<%= campground.image %>" class="card-img-top" >
+                <div class="card-body">
+                <h4 class="card-title"><%= campground.title %></h4>
+                <p class="card-text"><%= campground.description %></p>
+                <a href="/campgrounds/<%= campground._id %>/comments/new" class="btn btn-primary">comment</a>
+                <!-- <a href="#" class="btn btn-danger">Delete</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+
+        </div>
+        <div class="col-lg-9">
+            <div class="card" style="width: 60%;">
+              <div class="card-body">
+              <h4 class="card-title">Comments</h4>
+              <hr class="style1">
+              <% campground.comment.forEach(function(comment){ %>
+                    <p class="card-text"><strong><%= comment.author.name %></strong></p>
+                    <p class="card-text"><%= comment.text %></p>
+                    <hr class="style2">
+              <% }) %>
+              </div>
+            </div>
+        </div>
+</div>
+
+<%- include("../partials/footer") %>
+

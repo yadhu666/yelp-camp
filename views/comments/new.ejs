@@ -1,0 +1,15 @@
+<%- include("../partials/header") %>
+
+<div class="container p-5 mt-5 border border-info rounded-lg shadow-lg p-3 mb-5 bg-white rounded" style="width:50% ;">
+    <form method="POST" action="/campgrounds/<%= campground._id %>/comments">
+        <div class="form-group">
+            <label for="content-text">comment</label>
+            <input type="text" name="comment[text]" class="form-control" id="content-text" >
+         </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+<%- include("../partials/footer") %>
